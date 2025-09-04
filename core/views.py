@@ -231,7 +231,7 @@ def follow(request):
 
 @login_required(login_url='signin')
 def search(request):
-    user_object= User.objects.get(username=request.user.username)
+    user_object= User.objects.get(username=request.user.username) # to access username from user foreign key in models.py
     user_profile= Profile.objects.get(user=user_object)
 
     if request.method=='POST':
